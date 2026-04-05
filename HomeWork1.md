@@ -45,8 +45,8 @@
 
 | Ген | Глобальное (Needle) | Локальное (Water) |
 |------|----------------------|--------------------|
-| TYR | `needle_TYR.aln` | `water_TYR.aln` |
-| OCA2 | `needle_OCA2.aln` | `water_OCA2.aln` |
+| TYR | `needle_tyr.aln` | `water_tyr.aln` |
+| OCA2 | `needle_oca2.aln` | `water_oca2.aln` |
 
 ---
 
