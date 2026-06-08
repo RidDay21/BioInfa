@@ -1,0 +1,30 @@
+digraph MappingQCFlow {
+    rankdir=TB;
+    node [fontname="Helvetica" shape="record"];
+
+    "start"         [label=<<b>start</b> | <font point-size="10">start</font>>];
+    "fastqc"        [label=<<b>fastqc</b> | <font point-size="10">linear</font>>];
+    "index_ref"     [label=<<b>index_ref</b> | <font point-size="10">linear</font>>];
+    "map_reads"     [label=<<b>map_reads</b> | <font point-size="10">linear</font>>];
+    "sam_to_bam"    [label=<<b>sam_to_bam</b> | <font point-size="10">linear</font>>];
+    "flagstat"      [label=<<b>flagstat</b> | <font point-size="10">linear</font>>];
+    "quality_check" [label=<<b>quality_check</b> | <font point-size="10">branch</font>>];
+    "sort_bam"      [label=<<b>sort_bam</b> | <font point-size="10">linear</font>>];
+    "call_variants" [label=<<b>call_variants</b> | <font point-size="10">linear</font>>];
+    "write_ok"      [label=<<b>write_ok</b> | <font point-size="10">linear</font>>];
+    "write_not_ok"  [label=<<b>write_not_ok</b> | <font point-size="10">linear</font>>];
+    "end"           [label=<<b>end</b> | <font point-size="10">end</font>>];
+
+    start         -> fastqc;
+    fastqc        -> index_ref;
+    index_ref     -> map_reads;
+    map_reads     -> sam_to_bam;
+    sam_to_bam    -> flagstat;
+    flagstat      -> quality_check;
+    quality_check -> sort_bam      [label=">90% OK"];
+    quality_check -> write_not_ok  [label="≤90% not OK"];
+    sort_bam      -> call_variants;
+    call_variants -> write_ok;
+    write_ok      -> end;
+    write_not_ok  -> end;
+}

@@ -1,0 +1,141 @@
+============================================================
+ Pipeline started: Mon Jun  8 21:33:44 +07 2026
+ Input FASTQ : ../data/SRR26117377.fastq.gz
+ Reference   : ../data/reference.fna
+ Sample      : sample
+============================================================
+[1/7] Running FastQC...
+application/gzip
+Started analysis of SRR26117377.fastq.gz
+Approx 5% complete for SRR26117377.fastq.gz
+Approx 10% complete for SRR26117377.fastq.gz
+Approx 15% complete for SRR26117377.fastq.gz
+Approx 20% complete for SRR26117377.fastq.gz
+Approx 25% complete for SRR26117377.fastq.gz
+Approx 30% complete for SRR26117377.fastq.gz
+Approx 35% complete for SRR26117377.fastq.gz
+Approx 40% complete for SRR26117377.fastq.gz
+Approx 45% complete for SRR26117377.fastq.gz
+Approx 50% complete for SRR26117377.fastq.gz
+Approx 55% complete for SRR26117377.fastq.gz
+Approx 60% complete for SRR26117377.fastq.gz
+Approx 65% complete for SRR26117377.fastq.gz
+Approx 70% complete for SRR26117377.fastq.gz
+Approx 75% complete for SRR26117377.fastq.gz
+Approx 80% complete for SRR26117377.fastq.gz
+Approx 85% complete for SRR26117377.fastq.gz
+Approx 90% complete for SRR26117377.fastq.gz
+Approx 95% complete for SRR26117377.fastq.gz
+Analysis complete for SRR26117377.fastq.gz
+      FastQC done. Renaming QC-report...
+      QC-report saved as: sample_QC_20260608_213440.html
+[2/7] Indexing reference with minimap2...
+[M::mm_idx_gen::0.301*0.31] collected minimizers
+[M::mm_idx_gen::0.326*0.48] sorted minimizers
+[M::main::1.061*0.20] loaded/built the index for 1 target sequence(s)
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::1.070*0.20] distinct minimizers: 838542 (98.18% are singletons); average occurrences: 1.034; average spacing: 5.352; total length: 4641652
+[M::main] Version: 2.26-r1175
+[M::main] CMD: minimap2 -d ../data/reference.fna.mmi ../data/reference.fna
+[M::main] Real time: 1.077 sec; CPU: 0.222 sec; Peak RSS: 0.049 GB
+      Index created: ../data/reference.fna.mmi
+[3/7] Mapping reads with minimap2 (ONT preset)...
+[M::main::0.474*0.14] loaded/built the index for 1 target sequence(s)
+[M::mm_mapopt_update::0.484*0.15] mid_occ = 12
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.492*0.17] distinct minimizers: 838542 (98.18% are singletons); average occurrences: 1.034; average spacing: 5.352; total length: 4641652
+[M::worker_pipeline::45.245*0.34] mapped 5511971 sequences
+[M::main] Version: 2.26-r1175
+[M::main] CMD: minimap2 -ax map-ont -t 4 ../data/reference.fna.mmi ../data/SRR26117377.fastq.gz
+[M::main] Real time: 45.252 sec; CPU: 15.524 sec; Peak RSS: 1.695 GB
+      Mapping done: results/sample.sam
+[4/7] Converting SAM to BAM (samtools view)...
+      BAM created: results/sample.bam
+[5/7] Running samtools flagstat...
+      flagstat result:
+5511971 + 0 in total (QC-passed reads + QC-failed reads)
+5511971 + 0 primary
+0 + 0 secondary
+0 + 0 supplementary
+0 + 0 duplicates
+0 + 0 primary duplicates
+0 + 0 mapped (0.00% : N/A)
+0 + 0 primary mapped (0.00% : N/A)
+0 + 0 paired in sequencing
+0 + 0 read1
+0 + 0 read2
+0 + 0 properly paired (N/A : N/A)
+0 + 0 with itself and mate mapped
+0 + 0 singletons (N/A : N/A)
+0 + 0 with mate mapped to a different chr
+0 + 0 with mate mapped to a different chr (mapQ>=5)
+bash: scripts/parse_flagstat.sh: No such file or directory
+============================================================
+ Pipeline started: Mon Jun  8 21:36:47 +07 2026
+ Input FASTQ : ../data/SRR26117377.fastq.gz
+ Reference   : ../data/reference.fna
+ Sample      : sample
+============================================================
+[1/7] Running FastQC...
+application/gzip
+Started analysis of SRR26117377.fastq.gz
+Approx 5% complete for SRR26117377.fastq.gz
+Approx 10% complete for SRR26117377.fastq.gz
+Approx 15% complete for SRR26117377.fastq.gz
+Approx 20% complete for SRR26117377.fastq.gz
+Approx 25% complete for SRR26117377.fastq.gz
+Approx 30% complete for SRR26117377.fastq.gz
+Approx 35% complete for SRR26117377.fastq.gz
+Approx 40% complete for SRR26117377.fastq.gz
+Approx 45% complete for SRR26117377.fastq.gz
+Approx 50% complete for SRR26117377.fastq.gz
+Approx 55% complete for SRR26117377.fastq.gz
+Approx 60% complete for SRR26117377.fastq.gz
+Approx 65% complete for SRR26117377.fastq.gz
+Approx 70% complete for SRR26117377.fastq.gz
+Approx 75% complete for SRR26117377.fastq.gz
+Approx 80% complete for SRR26117377.fastq.gz
+Approx 85% complete for SRR26117377.fastq.gz
+Approx 90% complete for SRR26117377.fastq.gz
+Approx 95% complete for SRR26117377.fastq.gz
+Analysis complete for SRR26117377.fastq.gz
+      FastQC done. Renaming QC-report...
+      QC-report saved as: sample_QC_20260608_213742.html
+[2/7] Indexing reference with minimap2...
+      Index already exists, skipping.
+[3/7] Mapping reads with minimap2 (ONT preset)...
+[M::main::1.074*0.07] loaded/built the index for 1 target sequence(s)
+[M::mm_mapopt_update::1.083*0.08] mid_occ = 12
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::1.092*0.08] distinct minimizers: 838542 (98.18% are singletons); average occurrences: 1.034; average spacing: 5.352; total length: 4641652
+[M::worker_pipeline::44.621*0.36] mapped 5511971 sequences
+[M::main] Version: 2.26-r1175
+[M::main] CMD: minimap2 -ax map-ont -t 4 ../data/reference.fna.mmi ../data/SRR26117377.fastq.gz
+[M::main] Real time: 44.631 sec; CPU: 15.960 sec; Peak RSS: 1.696 GB
+      Mapping done: results/sample.sam
+[4/7] Converting SAM to BAM (samtools view)...
+      BAM created: results/sample.bam
+[5/7] Running samtools flagstat...
+      flagstat result:
+5511971 + 0 in total (QC-passed reads + QC-failed reads)
+5511971 + 0 primary
+0 + 0 secondary
+0 + 0 supplementary
+0 + 0 duplicates
+0 + 0 primary duplicates
+0 + 0 mapped (0.00% : N/A)
+0 + 0 primary mapped (0.00% : N/A)
+0 + 0 paired in sequencing
+0 + 0 read1
+0 + 0 read2
+0 + 0 properly paired (N/A : N/A)
+0 + 0 with itself and mate mapped
+0 + 0 singletons (N/A : N/A)
+0 + 0 with mate mapped to a different chr
+0 + 0 with mate mapped to a different chr (mapQ>=5)
+      Mapped reads: 0.00%
+[6/7] Quality assessment...
+      % mapped (0.00%) <= 90% → not OK
+
+>>> RESULT: not OK
+>>> Pipeline finished: Mon Jun  8 21:38:38 +07 2026
